@@ -30,4 +30,28 @@ router.post("/", (req, res) => {
   });
 });
 
+router.get("/", (req, res) => {
+  connection.query("SELECT * FROM contact", (err, result) => {
+    if (err) {
+      console.error("Erreur lors de la récuperation des contacts:", err);
+      return res.json({ error: "Erreur lors de la récuperation des contacts" });
+    }
+
+    res.json(result);
+  });
+});
+
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  const query = "DELETE FROM contact WHERE id = ?";
+  connection.query(query, [id], (err, result) => {
+    if (err) {
+      console.error("Erreur lors de la suppresion du contacts", err);
+      return res.json({ error: "Erreur lors de la suppresion du contacts" });
+    }
+
+    res.json({ message: "Contact supprimé avec succès" });
+  });
+});
+
 module.exports = router;

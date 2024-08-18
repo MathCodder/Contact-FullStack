@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#btn-add {
+  margin-top: 1em;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+}
+
+.input-box input {
+  padding: 5px 10px;
+}
+
+#btn-add,
+#submit {
+  padding: 5px 10px;
+}
+
+table {
+  width: 20%;
+  border-collapse: collapse;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+td button {
+  padding: 5px 15px;
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}

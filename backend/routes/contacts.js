@@ -26,7 +26,13 @@ router.post("/", (req, res) => {
     }
 
     // Envoyer une réponse de succès
-    res.json({ message: "Nouveau contact ajouté avec succès" });
+    const newContact = {
+      id: result.insertId,
+      name,
+      email,
+      phone,
+    };
+    res.json(newContact);
   });
 });
 
